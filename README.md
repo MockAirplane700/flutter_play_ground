@@ -1,6 +1,26 @@
 # flutter_play_ground
 
-An application I use to play around in flutter trying out different things
+An application about me and the work I do
+
+## Flutter playground
+
+# A page that deals a browser that I personally want to make
+
+## Projects
+
+# A showing of all projects I am currently and have worked on
+
+## Experience
+
+# A showing of my work experience
+
+## Education
+
+## Fire++
+
+# A segway into my art and animation, shows my work there and links to SynthexArt idea
+
+## About me
 
 ## Getting Started
 
