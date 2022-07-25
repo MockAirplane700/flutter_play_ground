@@ -6,10 +6,11 @@ class Projects {
   final String shortDescription;
   final String description;
   final String technologiesUsed;
+  final String websiteUrl;
 
   Projects({
     required this.name, required this.startDate, required this.endDate,
     required this.description, required this.shortDescription,
-    required this.technologiesUsed, required this.url
+    required this.technologiesUsed, required this.url, required this.websiteUrl
 });
 }

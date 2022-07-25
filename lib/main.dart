@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_play_ground/pages/education%20page.dart';
+import 'package:flutter_play_ground/pages/experience%20page.dart';
+import 'package:flutter_play_ground/pages/mtha\'s%20world/characters%20page.dart';
+import 'package:flutter_play_ground/pages/mtha\'s%20world/home.dart';
+import 'package:flutter_play_ground/pages/projects%20page.dart';
+import 'package:flutter_play_ground/pages/view%20art%20work.dart';
 import 'package:flutter_play_ground/web%20view/Pages/select_url_display.dart';
 import 'package:flutter_play_ground/web%20view/Pages/web_view_home.dart';
 
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const InputUrl(),
+      home: const CharactersPage(),
     );
   }
 }

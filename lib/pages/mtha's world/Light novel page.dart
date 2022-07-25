@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_play_ground/constants/constants.dart';
+import 'package:flutter_play_ground/custom%20objects/Light%20novel.dart';
+
+class LightNovelPage extends StatefulWidget {
+  final LightNovel lightNovel;
+
+  const LightNovelPage({Key? key, required this.lightNovel}) : super(key: key);
+
+  @override
+  _LightNovelPageState createState() => _LightNovelPageState();
+}
+
+class _LightNovelPageState extends State<LightNovelPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.lightNovel.name, style: const TextStyle(color: primaryTextColor),),
+        elevation: 0,
+        backgroundColor: primaryAppBarColor,
+        iconTheme: const IconThemeData(color: primaryIconThemeColor),
+      ),
+      backgroundColor: primaryAppBackgroundColor,
+      body: SingleChildScrollView(
+        child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/90), child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/80), child: Image.network(widget.lightNovel.image),),
+            Row(
+              children: [
+                Text('Author: ${widget.lightNovel.author}', style: const TextStyle(color: primaryTextColor),),
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height/2,
+              width:  MediaQuery.of(context).size.height/2,
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 1,
+                ),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    child: Container(
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                      child: Image.network(widget.lightNovel.fanArt[index], width: MediaQuery.of(context).size.width/8,height: MediaQuery.of(context).size.width/8,),
+                    ),
+                    onTap: () {
+                      //open dialog box
+                      showDialog(context: context,
+                          barrierDismissible: true,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: const Text('Fan art' , style: TextStyle(color: primaryTextColor),),
+                              content: Image.network(widget.lightNovel.fanArt[index]),
+                            );
+                          }
+                      );
+                    },
+                  );
+                },
+                itemCount: widget.lightNovel.fanArt.length,
+              ),
+            ),
+          ],
+        ),),
+      ),
+    );
+  }
+}

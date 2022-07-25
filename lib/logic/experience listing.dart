@@ -4,7 +4,8 @@ class ExperienceListing{
   String string ='' ;
   static final List<Experience> _list = [
     //Freelance experience
-    Experience(networkUrl: 'https://images.squarespace-cdn.com/content/v1/62659d6252acdc0ad96d3ffb/1653111922044-G8D4ZPAVCI97XF02XWCX/unsplash-image-LrxSl4ZxoRs.jpg?format=750w',
+    Experience(
+        networkUrl: 'https://images.squarespace-cdn.com/content/v1/62659d6252acdc0ad96d3ffb/1653111922044-G8D4ZPAVCI97XF02XWCX/unsplash-image-LrxSl4ZxoRs.jpg?format=750w',
         description: '• Supervised, delegated and assigned collaborative tasks to a developer team\n• Discussed and translated a client’s idea into technical, cost effective solution\n• Explained to clients cost effective ways to get their applications up and running as well as  explaining what software technologies were needed ', endDate: 'current', startDate: 'May 2020',
         name: 'Software developer', nameOfCompany: 'Freelance',
         workType: 'Self employed'
@@ -64,4 +65,8 @@ class ExperienceListing{
     //SETA vice captain
 
   ];
+
+  static List<Experience> get() {
+    return _list;
+  }
 }
