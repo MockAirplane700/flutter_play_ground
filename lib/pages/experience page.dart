@@ -3,6 +3,8 @@ import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/experience.dart';
 import 'package:flutter_play_ground/logic/experience%20listing.dart';
 import 'package:flutter_play_ground/pages/view%20experience.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
 
 class ExperiencePage extends StatefulWidget {
   const ExperiencePage({Key? key}) : super(key: key);
@@ -24,6 +26,8 @@ class _ExperiencePageState extends State<ExperiencePage> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
+      drawer:const CustomNavigationDrawer(),
       body: Center(
         child: ListView.builder(
             itemBuilder: (context, index) {

@@ -5,9 +5,14 @@ import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/character.dart';
 import 'package:flutter_play_ground/firebase_options.dart';
 import 'package:flutter_play_ground/pages/mtha\'s%20world/view%20character%20page.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class CharactersPage extends StatefulWidget {
-  const CharactersPage({Key? key}) : super(key: key);
+  final int selectedIndex;
+
+  const CharactersPage({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
   _CharactersPageState createState() => _CharactersPageState();
@@ -25,7 +30,9 @@ class _CharactersPageState extends State<CharactersPage> {
         backgroundColor: primaryAppBarColor,
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
+      drawer:const CustomNavigationDrawer(),
       backgroundColor: primaryAppBackgroundColor,
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 2),
       body:FutureBuilder(
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasError) {

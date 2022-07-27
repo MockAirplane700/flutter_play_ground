@@ -5,6 +5,8 @@ import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/art%20work.dart';
 import 'package:flutter_play_ground/firebase_options.dart';
 import 'package:flutter_play_ground/pages/art%20work%20page.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
 
 class ViewArtWorks extends StatefulWidget {
   const ViewArtWorks({Key? key}) : super(key: key);
@@ -27,6 +29,8 @@ class _ViewArtWorksState extends State<ViewArtWorks> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
+      drawer:const CustomNavigationDrawer(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +38,7 @@ class _ViewArtWorksState extends State<ViewArtWorks> {
             //Circle avatar
             CircleAvatar(
               radius: MediaQuery.of(context).size.width/5,
-              backgroundImage: const NetworkImage('https://mcdn.wallpapersafari.com/medium/19/5/X6rY4s.jpg'),
+              backgroundImage: const NetworkImage(logo),
             ),
             //grid
             FutureBuilder(

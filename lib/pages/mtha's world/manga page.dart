@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/manga.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class MangaPage extends StatefulWidget {
   final Manga manga;
@@ -21,6 +24,8 @@ class _MangaPageState extends State<MangaPage> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 1),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/90), child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

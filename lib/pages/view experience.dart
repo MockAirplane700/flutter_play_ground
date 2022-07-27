@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/experience.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
 
 class ViewExperience extends StatefulWidget {
   final Experience experience;
@@ -23,6 +25,8 @@ class _ViewExperienceState extends State<ViewExperience> {
         elevation: 0,
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

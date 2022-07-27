@@ -18,9 +18,14 @@ import 'package:flutter_play_ground/pages/mtha\'s%20world/Light%20novel%20page.d
 import 'package:flutter_play_ground/pages/mtha\'s%20world/comic%20page.dart';
 import 'package:flutter_play_ground/pages/mtha\'s%20world/manga%20page.dart';
 import 'package:flutter_play_ground/pages/mtha\'s%20world/story%20page.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  final int selectedIndex;
+
+  const Home({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -42,6 +47,8 @@ class _HomeState extends State<Home> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

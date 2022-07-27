@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/Light%20novel.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class LightNovelPage extends StatefulWidget {
   final LightNovel lightNovel;
@@ -22,6 +25,8 @@ class _LightNovelPageState extends State<LightNovelPage> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 1),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/90), child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

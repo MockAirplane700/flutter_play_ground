@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/character.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class ViewCharacterPage extends StatefulWidget {
   final Character character;
@@ -22,6 +25,8 @@ class _ViewCharacterPageState extends State<ViewCharacterPage> {
         backgroundColor: primaryAppBarColor,
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 2),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/70), child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

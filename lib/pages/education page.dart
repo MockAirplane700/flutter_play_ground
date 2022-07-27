@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/education.dart';
 import 'package:flutter_play_ground/logic/education%20listing.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
 
 class EducationPage extends StatefulWidget {
   const EducationPage({Key? key}) : super(key: key);
@@ -23,6 +25,8 @@ class _EducationPageState extends State<EducationPage> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
+      drawer:const CustomNavigationDrawer(),
       body: Center(
         child: ListView.builder(
             itemBuilder: (context, index) {

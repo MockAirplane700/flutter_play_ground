@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_play_ground/constants/constant%20functions.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/projects.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class ViewProject extends StatefulWidget {
   final Projects projects;
@@ -21,6 +25,8 @@ class _ViewProjectState extends State<ViewProject> {
         elevation: 0,
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 0),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/100),child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,8 +55,9 @@ class _ViewProjectState extends State<ViewProject> {
                 Expanded(child: IconButton(
                     onPressed: () {
                       // access the url launcher
+                      ConstantFunctions.openLink(widget.projects.websiteUrl);
                     },
-                    icon: const Icon(Icons.wifi_tethering)
+                    icon: const Icon(Icons.language)
                 ))
               ],
             )

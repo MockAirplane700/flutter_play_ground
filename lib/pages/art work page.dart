@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_play_ground/constants/constant%20functions.dart';
 import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/art%20work.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ArtWorkPage extends StatefulWidget {
@@ -23,6 +25,8 @@ class _ArtWorkPageState extends State<ArtWorkPage> {
         iconTheme: const IconThemeData(color: primaryIconThemeColor),
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar:const CustomBottomNavigationBar(selected: 1),
       body: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width/90), child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +71,11 @@ class _ArtWorkPageState extends State<ArtWorkPage> {
                   flex: 1,
                   child: TextButton(
                       onPressed: () {
-                        ConstantFunctions.openLink(widget.artWork.tiktok);
+                        String string = widget.artWork.tiktok;
+                        if (string.isEmpty) {
+                          string = 'https://www.tiktok.com';
+                        }
+                        ConstantFunctions.openLink(string);
                       },
                       child: const Text('Tiktok', style: TextStyle(color: primaryTextColor),)
                   ),

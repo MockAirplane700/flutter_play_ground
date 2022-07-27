@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,9 +6,14 @@ import 'package:flutter_play_ground/constants/constants.dart';
 import 'package:flutter_play_ground/custom%20objects/projects.dart';
 import 'package:flutter_play_ground/firebase_options.dart';
 import 'package:flutter_play_ground/pages/view%20project%20page.dart';
+import 'package:flutter_play_ground/widgets/custom%20bottom%20navigation%20bar.dart';
+import 'package:flutter_play_ground/widgets/custom%20navigation%20drawer.dart';
+import 'package:flutter_play_ground/widgets/custom%20search%20delegate.dart';
 
 class ProjectsPage extends StatefulWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+  final int selectedIndex;
+
+  const ProjectsPage({Key? key, required this.selectedIndex}) : super(key: key);
 
   @override
   _ProjectsPageState createState() => _ProjectsPageState();
@@ -30,6 +34,8 @@ class _ProjectsPageState extends State<ProjectsPage> {
         backgroundColor: primaryAppBarColor,
       ),
       backgroundColor: primaryAppBackgroundColor,
+      drawer:const CustomNavigationDrawer(),
+      bottomNavigationBar: const CustomBottomNavigationBar(selected: 0),
       body: Center(
         child: FutureBuilder(
             builder: (BuildContext context, AsyncSnapshot snapshot) {
