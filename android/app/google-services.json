@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "695396251062",
+    "project_id": "mtha-s-world",
+    "storage_bucket": "mtha-s-world.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695396251062:android:afabf0bbaef6e760f03d17",
+        "android_client_info": {
+          "package_name": "com.example.flutter_play_ground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695396251062-rh7c3ga9ji3hnrbpc59t8qo5uhbhq59j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn9mx6hDrMLKIGPPg3SJt6b2hj1WbrOQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695396251062-rh7c3ga9ji3hnrbpc59t8qo5uhbhq59j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "695396251062-c1in875apu0hheecrg7oid54q9dij0ih.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterPlayGround"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
